@@ -50,8 +50,8 @@ pip install -r requirements.txt
 python server.py
 ```
 
-- Mặc định API chạy tại: **http://localhost:3000**
-- Healthcheck: **GET** `http://localhost:3000/health`
+- Mặc định API chạy tại: **http://localhost:5000**
+- Healthcheck: **GET** `http://localhost:5000/health`
 
 ---
 
@@ -59,7 +59,7 @@ python server.py
 ```bash
 cd web
 npm install
-npm run dev    # http://localhost:5000
+npm run dev    # http://localhost:3000
 
 ```
 ## 5) API Endpoints
