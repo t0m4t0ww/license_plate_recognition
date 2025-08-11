@@ -28,6 +28,7 @@ Hệ thống phát hiện **biển số** và **đọc ký tự** từ **ảnh /
 └─ README.md
 ```
 > Khuyến nghị tạo virtual env **ngoài** repo để repo nhẹ. (VD: `..\venv310`)
+---
 > Kích hoạt venv bằng lệnh .\venv310\Scripts\activate     
 
 ---
