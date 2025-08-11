@@ -58,7 +58,6 @@ python server.py
 ```bash
 cd web
 npm install
-echo "VITE_API_BASE=http://localhost:8000" > .env
 npm run dev    # http://localhost:5173
 ```
 
