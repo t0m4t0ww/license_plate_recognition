@@ -49,8 +49,8 @@ pip install -r requirements.txt
 python server.py
 ```
 
-- Mặc định API chạy tại: **http://localhost:8000**
-- Healthcheck: **GET** `http://localhost:8000/health`
+- Mặc định API chạy tại: **http://localhost:3000**
+- Healthcheck: **GET** `http://localhost:3000/health`
 
 ---
 
@@ -58,13 +58,9 @@ python server.py
 ```bash
 cd web
 npm install
-npm run dev    # http://localhost:5173
+npm run dev    # http://localhost:5000
+
 ```
-
-> Frontend gọi API qua biến `VITE_API_BASE`. Sửa `.env` nếu bạn đổi cổng.
-
----
-
 ## 5) API Endpoints
 
 | Method | Endpoint   | Mô tả |
@@ -72,39 +68,6 @@ npm run dev    # http://localhost:5173
 | POST   | `/detect`  | Upload **ảnh** → trả về JSON + ảnh annotate (Base64) |
 | GET    | `/video`   | Stream **video** đã xử lý (MJPEG). Dùng trực tiếp trong `<img src>` |
 | GET    | `/webcam`  | Stream **webcam** real-time (MJPEG). Dùng trực tiếp trong `<img src>` |
-
-### Ví dụ hiển thị stream trên frontend
-```html
-<img src="http://localhost:8000/video" alt="video stream" />
-<img src="http://localhost:8000/webcam" alt="webcam stream" />
-```
-
-### Test nhanh với cURL
-```bash
-curl -X POST http://localhost:8000/detect   -F "file=@path/to/your_image.jpg"
-```
-
----
-
-## 6) Troubleshooting
-- **CORS**: đảm bảo đã bật `flask-cors` trong backend.
-- **Port busy**: đổi port trong `server.py` hoặc chạy `npm run dev -- --port 5174`.
-- **Torch/weights**: nếu lỗi load `.pt`, kiểm tra phiên bản `torch` và CPU/GPU phù hợp.
-- **Hiệu năng**: GPU nhanh hơn đáng kể; nếu dùng CPU, ảnh lớn → thời gian xử lý tăng.
-
----
-
-## 7) Gợi ý Git (push repo)
-```bash
-git init
-git add .
-git commit -m "feat: initial commit"
-git branch -M main
-git remote add origin https://github.com/<username>/license_plate_recognition.git
-git push -u origin main
-```
-
-> Đã cấu hình `.gitignore` để **không** đẩy `venv` và `node_modules`. Model `models/best.pt` (~5MB) được push bình thường.
 
 ---
 
